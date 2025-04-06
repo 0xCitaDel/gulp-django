@@ -15,6 +15,8 @@ npm i   gulp-clean gulp-server-livereload   gulp-notify gulp-group-css-media-que
 ```
 ## Описание пакетов:
 
+- browser-sync - 
+
 - gulp-autoprefixer
 - gulp-clean-css - Сжатие CSS файлов(удаление лишних пробелов и переносов строк)
 

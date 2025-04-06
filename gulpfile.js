@@ -93,5 +93,5 @@ gulp.task("watch:files", function () {
   gulp.watch("./**/*.py", gulp.series("reload"));
 });
 
-gulp.task("watch:dev", gulp.parallel("run:django", "browser:sync", "watch:files"));
+gulp.task("default", gulp.parallel("run:django", "browser:sync", "watch:files"));
 
