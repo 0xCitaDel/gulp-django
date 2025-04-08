@@ -4,10 +4,53 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Title + SEO -->
         <title>{{ title }}</title>
-        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+        <meta name="description" content="{{ description }}">
+        <meta name="keywords" content="{{ keywords }}">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="Чистый день">
+
+        <link href="{% static 'css/style.min.css' %}" rel="stylesheet">
+
+        <!-- Open Graph -->
+        <!-- og_type website для главной и article для страницы услуг -->
+        <meta property="og:type" content="website">
+        <meta property="og:locale" content="ru_RU">
+        <meta property="og:url" content="https://cleenday.ru">
+        <meta property="og:title" content="Чистый день — профессиональный клининг в Сочи">
+        <meta property="og:description" content="Уборка квартир, домов и офисов. Чисто, быстро, надёжно.">
+        <meta property="og:image" content="https://cleenday.ru/static/images/logo.png">
+        <meta property="og:image:alt" content="A green cover image with Django logo" />
+
+        <!-- Favicon -->
+        <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+
+        <!-- JSON-LD -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Чистый день",
+            "url": "https://cleenday.ru",
+            "telephone": "+7-999-000-1122",
+            "email": "sochi@cleenday.ru",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "ул. Примерная, д. 1",
+              "addressLocality": "Москва",
+              "postalCode": "101000",
+              "addressCountry": "RU"
+            },
+            "openingHours": "Mo-Sa 09:00-20:00",
+            "priceRange": "₽₽"
+        }
+        </script>
+        <script src="{% static "js/main.min.js" %}"></script>
     </head>
     <body>
+        {% include 'base/header.html' %}
         {% block content %}
         {% endblock %}
     </body>

@@ -1,6 +1,5 @@
-h1 {
-  color: red;
-}
-h2 {
-  color: red;
-}
+@use './base/base';
+@use './base/containers';
+@use './base/vars';
+
+@use './blocks/nav';

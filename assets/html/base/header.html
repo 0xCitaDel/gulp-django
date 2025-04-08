@@ -1,0 +1,30 @@
+{% load static %}
+<header>
+    <div class="container">
+        <div class="header__logo">
+            <a href="{% url 'index' %}" class="header__logo-link">
+                <img src="{% static 'img/logo.svg' %}" alt="Логотип клининговой компании Чистый день">
+            </a>
+        </div>
+        <nav class="header__menu">
+            <ul class="menu">
+                <li class="menu__item has-dropdown">
+                    <a class="menu__link" href="#">Уборка квартир</a>
+                    <ul class="menu__dropdown">
+                        <li class="menu__dropdown--item">
+                            <a href="#" class="menu__dropdown-link">Стандартная уборка</a>
+                        </li>
+                        <li class="menu__dropdown--item">
+                            <a href="#" class="menu__dropdown-link">Стандартная уборка</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-item has-dropdown"><a href="#">Уборка домов</a></li>
+                <li class="menu-item has-dropdown"><a href="#">Уборка офисов</a></li>
+                <li class="menu-item highlighted has-dropdown">
+                    <a href="#">Другие услуги</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
