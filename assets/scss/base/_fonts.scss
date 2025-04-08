@@ -1,0 +1,17 @@
+@mixin font($name, $file, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: '#{$name}';
+    src: url('../fonts/#{$file}.woff2') format('woff2'),
+         url('../fonts/#{$file}.woff') format('woff');
+    font-weight: #{$weight};
+    font-style: #{$style};
+    font-display: swap;
+  }
+}
+
+@include font('Manrope', 'Manrope-Regular', 400);
+@include font('Manrope', 'Manrope-SemiBold', 600);
+@include font('Unbounded', 'Unbounded-Regular', 400);
+@include font('Unbounded', 'Unbounded-Medium', 500);
+@include font('Unbounded', 'Unbounded-SemiBold', 600);
+@include font('Unbounded', 'Unbounded-Bold', 700);

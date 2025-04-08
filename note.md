@@ -1,66 +1,75 @@
-# Установка всех пакетов
+# Установка всех необходимых пакетов
+
+## Для запуска сборки необходимо установить все зависимости, выполнив следующую команду:
 
 ```shell
 npm install browser-sync del gulp gulp-if gulp-plumber autoprefixer cssnano gulp-htmlmin gulp-npm-dist gulp-rename gulp-sass gulp-postcss postcss-sort-media-queries gulp-sourcemaps gulp-wait sass postcss @babel/core @babel/register @babel/preset-env esbuild --save-dev
 ```
 
-## Описание пакетов:
+### Описание пакетов:
 
 - browser-sync - Перезагружает браузер при изменении файлов (HTML, CSS, JS и др.)
-- del - Используется для удаления файлов и папок
+- del - Удаление файлов и папок
 - esbuild - Сборщик (bundler) и транспайлер JavaScript
-- gulp-plumber - Предотвращает "падение" Gulp-пайплайна при возникновении ошибок.
-- gulp - Собственно Gulp
-- gulp-if — Позволяет выполнять .pipe() только если условие true
+- gulp - Сердце всей сборки — таск-раннер
+- gulp-if - Условные конструкции внутри .pipe()
+- gulp-plumber - Защита от сбоев пайплайна при ошибках
+- sass - Компилятор SASS/SCSS
+- gulp-sass - Обёртка над sass для работы с Gulp
+- postcss - Постобработка CSS через плагины
+- gulp-postcss - Интеграция PostCSS в Gulp
+- autoprefixer - Автоматическое добавление вендорных префиксов
+- postcss-sort-media-queries - Сортировка и группировка медиа-запросов
+- cssnano - Минификация CSS
+- gulp-sourcemaps - Генерация source map-ов
+- gulp-rename - Переименование файлов
+- [x] gulp-wait - Задержка выполнения задач
+- [x] gulp-htmlmin - Минификация HTML
+- [x] gulp-npm-dist - Извлечение необходимых файлов из node_modules
 
-- sass - Необходим для сборки SASS / SCSS
-- postcss - Инструмент для обработки CSS с помощью плагинов
-
-- gulp-sass - Сборка SASS / SCSS
-- gulp-postcss - Обёртка, которая позволяет использовать PostCSS внутри Gulp
-- postcss-sort-media-queries -  Группирует все ваши @media правила
-- cssnano - Сжатие CSS файлов(удаление лишних пробелов и переносов строк)
-- gulp-sourcemaps - Исходные карты для CSS
-- autoprefixer - Добавляет vendor-префиксы в CSS-код
-- gulp-rename - Позволяет изменять имя, расширение или путь файлов пайплайне
-- gulp-wait - Добавляет задержку (паузу) в Gulp-таск
-- [x] gulp-htmlmin - Сжимает HTML-файлы, удаляя всё ненужное
-- [x] gulp-npm-dist - Помогает собирать только необходимые файлы из node_modules
-- @babel/core - ядро самого Babe
-- @babel/register — Преобразует современный JavaScript (ES6+) в Node.js-совместимый код.
-- @babel/preset-env - Универсальный и настраиваемый пресет для Babel
+- @babel/core - Ядро Babel
+- @babel/register — Временное подключение Babel в рантайме
+- @babel/preset-env - Современная настройка Babel под окружение
 
 ## Не установлены, но нужно использовать
 - gulp-changed - Пропускает через пайплайн только те файлы, которые изменились с прошлого раза
 - gulp-svg-sprite - берёт десятки маленьких SVG-файликов и делает из них единый, компактный спрайт
-- webpack-stream - Позволяет использовать Webpack прямо внутри Gulp
-- style-loader - Инъектор CSS в браузер
-- css-loader - Импортирует CSS прямо в JavaScript-файлы
-- gulp-babel - Запускает Babel внутри Gulp-задачи
 
 
 
 # Полезные пакеты
 
-- gulp-autoprefixer - Добавляет vendor-префиксы в CSS-код
-- gulp-cssbeautify - Форматирует и выравнивает CSS-файлы
 - gulp-file-include - Позволяет вставлять одни HTML-файлы внутрь других, как будто ты используешь шаблоны.
-- gulp-header - Добавляет заголовок (header) — то есть текст или код в начало каждого файла, который проходит через сборку.
-- gulp-notify - Показывает уведомления прямо на рабочем столе (или в консоли) во время выполнения Gulp-задач
-- gulp-uglify - Mинифицирует JavaScript-файлы:
 - merge-stream - Позволяет тебе объединить несколько Gulp-потоков (streams) в один
-- gulp-sass-glob - позволяет использовать глобальные шаблоны в @import внутри SCSS-файлов
-- gulp-csso - минификация и оптимизация CSS-файлов
 - gulp-ext-replace - Меняет расширение файлов в пайплайне Gulp
-- gulp-fonter-fix - Конвертации шрифтов между форматами
 - gulp-imagemin - Сжимает изображения без потери качества
 - gulp-replace - Заменяет строки или регулярные выражения в файлах
-- gulp-ttf2woff2 - Конвертирует .ttf шрифты в .woff2, который
 - gulp-typograf - Вычищает типографический бардак
-- gulp-web-images-css - Автоматически добавляет поддержку WebP и AVIF
-- gulp-html-img-to-picture - Преобразует теги <img> в теги <picture>
 - imagemin-webp - Конвертация изображений в формат WebP
-- gulp-clean-css - Сжатие CSS файлов(удаление лишних пробелов и переносов строк)
+- webpack-stream - Позволяет использовать Webpack прямо внутри Gulp
+- style-loader - Инъектор CSS в браузер
+- css-loader - Импортирует CSS прямо в JavaScript-файлы
 
+### CSS / SCSS
 
-- [Deprecated ] gulp-group-css-media-queries - Группировка CSS медиа запросов
+- [Deprecated] gulp-autoprefixer - Предпочтительно использовать postcss + autoprefixer напрямую
+- [Deprecated] gulp-group-css-media-queries - Устарел, заменяется на postcss-sort-media-queries
+- [Deprecated] gulp-csso - Почти не обновляется. Альтернатива: cssnano
+- [Deprecated] gulp-clean-css - Работает, но лучше использовать через postcss-плагины
+- [Deprecated] gulp-sass-glob - Может конфликтовать с современными @use/@forward синтаксисами
+
+### Изображения и шрифты
+- [Deprecated] gulp-fonter-fix - Конвертации шрифтов между форматами
+- [Deprecated] gulp-ttf2woff2 - Работает, но есть npm-библиотеки получше, например, ttf2woff2-cli
+- [Deprecated] gulp-web-images-css - Низкая поддержка, сложно кастомизировать. Рекомендуется использовать gulp-if + imagemin
+- [Deprecated] gulp-html-img-to-picture - Нестабильный, часто ломается. Лучше использовать HTML-шаблонизаторы или ручной <picture>
+
+### JavaScript
+- [Deprecated] gulp-babel - Babel лучше запускать через webpack или esbuild, Gulp-плагин не обязателен
+- [Deprecated] gulp-uglify - Плохо работает с современным ES6+. Лучше использовать terser через esbuild или webpack
+
+### Other
+- [Deprecated] gulp-cssbeautify - Устаревший стиль форматирования. Лучше использовать stylelint или prettier
+- [Deprecated] gulp-notify - Иногда вызывает проблемы в CI/CD. Лучше использовать консольные логгеры или toast-плагины
+- [Deprecated] gulp-header - Редко используется, проще добавлять заголовки через препроцессоры
+
