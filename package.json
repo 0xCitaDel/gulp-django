@@ -1,7 +1,7 @@
 {
+    "type": "module",
     "name": "django-gulp-project",
     "version": "1.0.0",
-    "type": "module",
     "description": "Django with Gulp project",
     "scripts": {
         "dev": "gulp watch",
@@ -18,8 +18,10 @@
         "del": "^8.0.0",
         "esbuild": "^0.25.2",
         "gulp": "^5.0.0",
+        "gulp-changed": "^5.0.2",
         "gulp-htmlmin": "^5.0.1",
         "gulp-if": "^3.0.0",
+        "gulp-imagemin": "^9.1.0",
         "gulp-npm-dist": "^1.0.4",
         "gulp-plumber": "^1.2.1",
         "gulp-postcss": "^10.0.0",
@@ -27,6 +29,8 @@
         "gulp-sass": "^6.0.1",
         "gulp-sourcemaps": "^3.0.0",
         "gulp-wait": "^0.0.2",
+        "imagemin-pngquant": "^10.0.0",
+        "imagemin-webp": "^8.0.0",
         "postcss": "^8.5.3",
         "postcss-sort-media-queries": "^5.2.0",
         "sass": "^1.86.3"

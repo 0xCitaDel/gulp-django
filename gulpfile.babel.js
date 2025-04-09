@@ -7,6 +7,7 @@ import { htmlBuild, htmlWatch } from './gulp/tasks/html';
 import { sassBuild, sassWatch } from './gulp/tasks/styles';
 import { scriptsBuild, scriptsWatch } from './gulp/tasks/scripts';
 import { assetsBuild, assetsWatch } from './gulp/tasks/assets';
+import { imagesBuild, imagesWatch } from './gulp/tasks/images';
 
 config.setEnv();
 
@@ -15,7 +16,8 @@ export const build = gulp.series(
     htmlBuild,
     sassBuild,
     scriptsBuild,
-    assetsBuild
+    assetsBuild,
+    imagesBuild
 );
 
 export const watch = gulp.series(
@@ -26,7 +28,8 @@ export const watch = gulp.series(
         htmlWatch,
         sassWatch,
         scriptsWatch,
-        assetsWatch
+        assetsWatch,
+        imagesWatch
     )
 );
 

@@ -3,7 +3,7 @@
 ## Для запуска сборки необходимо установить все зависимости, выполнив следующую команду:
 
 ```shell
-npm install browser-sync del gulp gulp-if gulp-plumber autoprefixer cssnano gulp-htmlmin gulp-npm-dist gulp-rename gulp-sass gulp-postcss postcss-sort-media-queries gulp-sourcemaps gulp-wait sass postcss @babel/core @babel/register @babel/preset-env esbuild --save-dev
+npm install browser-sync del gulp gulp-if gulp-plumber gulp-changed gulp-imagemin imagemin-pngquant imagemin-webp autoprefixer cssnano gulp-htmlmin gulp-npm-dist gulp-rename gulp-sass gulp-postcss postcss-sort-media-queries gulp-sourcemaps gulp-wait sass postcss @babel/core @babel/register @babel/preset-env esbuild --save-dev
 ```
 
 ### Описание пакетов:
@@ -14,6 +14,10 @@ npm install browser-sync del gulp gulp-if gulp-plumber autoprefixer cssnano gulp
 - gulp - Сердце всей сборки — таск-раннер
 - gulp-if - Условные конструкции внутри .pipe()
 - gulp-plumber - Защита от сбоев пайплайна при ошибках
+- gulp-changed - Пропускает через пайплайн только те файлы, которые изменились с прошлого раза
+- gulp-imagemin - Сжимает изображения без потери качества
+- imagemin-pngquant - Оптимизация PNG
+- imagemin-webp - 
 - sass - Компилятор SASS/SCSS
 - gulp-sass - Обёртка над sass для работы с Gulp
 - postcss - Постобработка CSS через плагины
@@ -32,7 +36,6 @@ npm install browser-sync del gulp gulp-if gulp-plumber autoprefixer cssnano gulp
 - @babel/preset-env - Современная настройка Babel под окружение
 
 ## Не установлены, но нужно использовать
-- gulp-changed - Пропускает через пайплайн только те файлы, которые изменились с прошлого раза
 - gulp-svg-sprite - берёт десятки маленьких SVG-файликов и делает из них единый, компактный спрайт
 
 
@@ -42,7 +45,6 @@ npm install browser-sync del gulp gulp-if gulp-plumber autoprefixer cssnano gulp
 - gulp-file-include - Позволяет вставлять одни HTML-файлы внутрь других, как будто ты используешь шаблоны.
 - merge-stream - Позволяет тебе объединить несколько Gulp-потоков (streams) в один
 - gulp-ext-replace - Меняет расширение файлов в пайплайне Gulp
-- gulp-imagemin - Сжимает изображения без потери качества
 - gulp-replace - Заменяет строки или регулярные выражения в файлах
 - gulp-typograf - Вычищает типографический бардак
 - imagemin-webp - Конвертация изображений в формат WebP

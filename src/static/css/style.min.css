@@ -95,7 +95,7 @@ ul, ol {
   --container-width: 1200px;
   --container-padding: 15px;
   --font-main: "Manrope", sans-serif;
-  --font-accent: "Manrope", sans-serif;
+  --font-accent: "Unbounded", sans-serif;
   --font-titles: var(--font-accent);
   --page-bg: #fff;
   --text-color: #000;
