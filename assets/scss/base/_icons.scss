@@ -1,0 +1,40 @@
+$icon-color: #030E23;
+$icon-hover-color: #2972FE;
+
+$icon-multicolor-color: #2972FE;
+$icon-multicolor-hover-color: #000;
+
+$icon-accent-multicolor: #fff;
+$icon-accent-multicolor-hover: #fff;
+
+
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: $icon-color;
+  color: $icon-multicolor-color;
+  transition: color 0.2s ease;
+
+  &:hover {
+    fill: $icon-hover-color;
+    color: $icon-multicolor-hover-color;
+  }
+
+  &.two-tone {
+    .primary {
+      fill: $icon-multicolor-color;
+    }
+    .secondary {
+      fill: $icon-accent-multicolor;
+    }
+
+    &:hover {
+      .primary {
+        fill: $icon-multicolor-hover-color;
+      }
+      .secondary {
+        fill: $icon-accent-multicolor-hover;
+      }
+    }
+  }
+}

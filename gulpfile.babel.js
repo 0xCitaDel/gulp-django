@@ -2,22 +2,26 @@ import gulp from 'gulp';
 import clean from './gulp/tasks/clean';
 import { server } from './gulp/tasks/server.js';
 import config from './gulp/config.js';
-import runDjango from './gulp/tasks/django.js';
+import { runDjango } from './gulp/tasks/django.js';
 import { htmlBuild, htmlWatch } from './gulp/tasks/html';
 import { sassBuild, sassWatch } from './gulp/tasks/styles';
 import { scriptsBuild, scriptsWatch } from './gulp/tasks/scripts';
 import { assetsBuild, assetsWatch } from './gulp/tasks/assets';
 import { imagesBuild, imagesWatch } from './gulp/tasks/images';
+import { spritesBuild, spritesWatch } from './gulp/tasks/sprites';
 
 config.setEnv();
 
 export const build = gulp.series(
     clean,
-    htmlBuild,
-    sassBuild,
-    scriptsBuild,
-    assetsBuild,
-    imagesBuild
+    gulp.parallel(
+        htmlBuild,
+        sassBuild,
+        scriptsBuild,
+        assetsBuild,
+        imagesBuild,
+        spritesBuild
+    )
 );
 
 export const watch = gulp.series(
@@ -29,22 +33,7 @@ export const watch = gulp.series(
         sassWatch,
         scriptsWatch,
         assetsWatch,
-        imagesWatch
+        imagesWatch,
+        spritesWatch
     )
 );
-
-gulp.task('img:dev', function () {
-    return (
-        gulp
-            .src([`${paths.src.img}/**/*`, '!./src/img/svgicons/**/*'])
-            // .pipe(imagemin({ verbose: true }))
-            .pipe(gulp.dest(`${paths.dest.img}`))
-    );
-});
-
-
-gulp.task("watch:files", function () {
-  gulp.watch(`${paths.src.img}/**/*`, gulp.series("img:dev"));
-  gulp.watch("./**/*.py", gulp.series("reload"));
-});
-

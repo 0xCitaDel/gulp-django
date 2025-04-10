@@ -40,6 +40,31 @@
   font-style: normal;
   font-display: swap;
 }
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: #030E23;
+  color: #2972FE;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+.icon:hover {
+  fill: #2972FE;
+  color: #000;
+}
+.icon.two-tone .primary {
+  fill: #2972FE;
+}
+.icon.two-tone .secondary {
+  fill: #fff;
+}
+.icon.two-tone:hover .primary {
+  fill: #000;
+}
+.icon.two-tone:hover .secondary {
+  fill: #fff;
+}
+
 /* CSS Reset */
 *,
 *::before,

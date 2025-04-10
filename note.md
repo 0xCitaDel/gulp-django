@@ -3,8 +3,9 @@
 ## Для запуска сборки необходимо установить все зависимости, выполнив следующую команду:
 
 ```shell
-npm install browser-sync del gulp gulp-if gulp-plumber gulp-changed gulp-imagemin imagemin-pngquant imagemin-webp autoprefixer cssnano gulp-htmlmin gulp-npm-dist gulp-rename gulp-sass gulp-postcss postcss-sort-media-queries gulp-sourcemaps gulp-wait sass postcss @babel/core @babel/register @babel/preset-env esbuild --save-dev
+npm install browser-sync del gulp gulp-if gulp-plumber gulp-changed gulp-imagemin imagemin-pngquant imagemin-webp gulp-svg-sprite gulp-svgmin gulp-cheerio gulp-replace autoprefixer cssnano gulp-htmlmin gulp-npm-dist gulp-rename gulp-sass gulp-postcss postcss-sort-media-queries gulp-sourcemaps gulp-wait sass postcss @babel/core @babel/register @babel/preset-env esbuild --save-dev
 ```
+
 
 ### Описание пакетов:
 
@@ -18,6 +19,10 @@ npm install browser-sync del gulp gulp-if gulp-plumber gulp-changed gulp-imagemi
 - gulp-imagemin - Сжимает изображения без потери качества
 - imagemin-pngquant - Оптимизация PNG
 - imagemin-webp - 
+- gulp-svg-sprite - берёт десятки маленьких SVG-файликов и делает из них единый, компактный спрайт
+- gulp-svgmin - 
+- gulp-cheerio - 
+- gulp-replace — позволяет заменять текст в файлах во время сборки
 - sass - Компилятор SASS/SCSS
 - gulp-sass - Обёртка над sass для работы с Gulp
 - postcss - Постобработка CSS через плагины
@@ -30,14 +35,9 @@ npm install browser-sync del gulp gulp-if gulp-plumber gulp-changed gulp-imagemi
 - [x] gulp-wait - Задержка выполнения задач
 - [x] gulp-htmlmin - Минификация HTML
 - [x] gulp-npm-dist - Извлечение необходимых файлов из node_modules
-
 - @babel/core - Ядро Babel
 - @babel/register — Временное подключение Babel в рантайме
 - @babel/preset-env - Современная настройка Babel под окружение
-
-## Не установлены, но нужно использовать
-- gulp-svg-sprite - берёт десятки маленьких SVG-файликов и делает из них единый, компактный спрайт
-
 
 
 # Полезные пакеты

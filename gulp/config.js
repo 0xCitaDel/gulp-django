@@ -8,6 +8,7 @@ const config = {
         scss: `${srcPath }/scss`,
         js: `${srcPath }/js`,
         img: `${srcPath }/img`,
+        icons: `${srcPath }/img/icons`,
         fonts: `${srcPath}/fonts`
     },
     dest: {
@@ -16,6 +17,7 @@ const config = {
         css: `${destPath }/static/css`,
         js: `${destPath }/static/js`,
         img: `${destPath }/static/img`,
+        icons: `${destPath }/static/icons`,
         fonts: `${destPath}/static/fonts`
     },
     setEnv() {
