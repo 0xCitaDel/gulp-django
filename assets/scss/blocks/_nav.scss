@@ -1,16 +1,105 @@
-.menu_mobile {
-  display: flex;
-
-  @media (max-width: 1200px) {
-    color: red
-  }
-}
+// =====================================
+// VARIABLES
+// =====================================
+@use '../abstracts/colors';
+@use '../abstracts/vars';
 
 .menu {
-  display: flex;
-
-  @media (max-width: 1200px) {
-      color: red
+  &__list {
+    display: flex;
+    padding: 4px;
+    background-color: colors.$color-bg-menu-surface;
+    border-radius: 80px;
   }
-}
 
+  &__item {
+    position: relative;
+
+    &:hover {
+      .menu__wrapper {
+        border-radius: vars.$border-radius vars.$border-radius 0 0;
+        background-color: colors.$color-bg-surface;
+      }
+
+      .menu__body {
+        opacity: 1;
+        transform: scaleY(1);
+        pointer-events: auto;
+      }
+
+      .menu__title {
+        color: colors.$color-primary;
+      }
+
+      .menu__icon {
+        fill: colors.$color-primary;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    border-radius: vars.$border-radius;
+    display: inline-block;
+    transition: all 0.1s ease;
+    z-index: 1;
+  }
+
+  &__title {
+    cursor: pointer;
+
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+
+      &:hover {
+        color: colors.$color-primary-hover;
+
+        .menu__icon {
+          fill: colors.$color-primary-hover;
+        }
+      }
+    }
+  }
+
+  &__body {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0 16px 10px;
+    width: 100%;
+    background-color: colors.$color-bg-surface;
+    border-radius: 0 0 vars.$border-radius vars.$border-radius;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    pointer-events: none;
+    z-index: 100;
+  }
+
+
+  &__icon {
+    width: 0.71em;
+    height: 0.5em;
+    fill: colors.$color-text-dark;
+    margin-left: 5px;
+    transition: transform 0.3s ease, fill 0.3s ease;
+  }
+
+  &__dropdown-item {
+    color: colors.$color-primary;
+
+    &:hover {
+      color: colors.$color-primary-hover;
+    }
+  }
+
+  &__dropdown-link {
+    padding: 2px 0px;
+    display: block;
+  }
+
+}

@@ -1,37 +1,132 @@
 {% load static %}
 <header>
     <div class="container">
-        <div class="header__logo">
-            <a href="{% url 'index' %}" class="header__logo-link">
-                <img src="{% static 'img/logo.svg' %}" alt="Логотип клининговой компании Чистый день">
-            </a>
+        <div class="header__body">
+            <div class="header__logo">
+                <a href="{% url 'index' %}" class="header__logo-link">
+                    <img src="{% static 'img/logo.svg' %}" alt="Логотип клининговой компании Чистый день">
+                </a>
+            </div>
+            <nav class="menu">
+                <ul class="menu__list">
+                    <li class="menu__item menu__item--dropdown">
+                        <div class="menu__wrapper">
+                            <div class="menu__title">
+                                <div class="menu__title-wrapper">
+                                    <a class="menu__link" href="#">Уборка квартир</a>
+                                    <svg class="icon menu__icon">
+                                        <use xlink:href="{% static 'icons/sprite-solid.svg' %}#icon-chevron-down" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="menu__body">
+                                <ul class="menu__dropdown">
+                                    <li class="menu__dropdown-item">
+                                        <a href="#" class="menu__dropdown-link">Стандартная уборка</a>
+                                    </li>
+                                    <li class="menu__dropdown-item">
+                                        <a href="#" class="menu__dropdown-link">Стандартная уборка</a>
+                                    </li>
+                                    <li class="menu__dropdown-item">
+                                        <a href="#" class="menu__dropdown-link">Стандартная уборка</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="menu__item menu__item--dropdown">
+                        <div class="menu__wrapper">
+                            <div class="menu__title">
+                                <div class="menu__title-wrapper">
+                                    <a class="menu__link" href="#">Уборка домов</a>
+                                    <svg class="icon menu__icon">
+                                        <use xlink:href="{% static 'icons/sprite-solid.svg' %}#icon-chevron-down" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="menu__body">
+                                <ul class="menu__dropdown">
+                                    <li class="menu__dropdown-item">
+                                        <a href="#" class="menu__dropdown-link">Стандартная</a>
+                                    </li>
+                                    <li class="menu__dropdown-item">
+                                        <a href="#" class="menu__dropdown-link">Генеральная</a>
+                                    </li>
+                                    <li class="menu__dropdown-item">
+                                        <a href="#" class="menu__dropdown-link">После ремонта</a>
+                                    </li>
+                                    <li class="menu__dropdown-item">
+                                        <a href="#" class="menu__dropdown-link">Глубокая</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="menu__item menu__item--dropdown">
+                        <div class="menu__wrapper">
+                            <div class="menu__title">
+                                <div class="menu__title-wrapper">
+                                    <a class="menu__link" href="#">Уборка квартир</a>
+                                    <svg class="icon menu__icon">
+                                        <use xlink:href="{% static 'icons/sprite-solid.svg' %}#icon-chevron-down" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="menu__body">
+                                <ul class="menu__dropdown">
+                                    <li class="menu__dropdown-item">
+                                        <a href="#" class="menu__dropdown-link">Стандартная уборка</a>
+                                    </li>
+                                    <li class="menu__dropdown-item">
+                                        <a href="#" class="menu__dropdown-link">Стандартная уборка</a>
+                                    </li>
+                                    <li class="menu__dropdown-item">
+                                        <a href="#" class="menu__dropdown-link">Стандартная уборка</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="menu__item menu__item--dropdown">
+                        <div class="menu__wrapper">
+                            <div class="menu__title">
+                                <div class="menu__title-wrapper">
+                                    <a class="menu__link" href="#">Уборка квартир</a>
+                                    <svg class="icon menu__icon">
+                                        <use xlink:href="{% static 'icons/sprite-solid.svg' %}#icon-chevron-down" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="menu__body">
+                                <ul class="menu__dropdown">
+                                    <li class="menu__dropdown-item">
+                                        <a href="#" class="menu__dropdown-link">Стандартная уборка</a>
+                                    </li>
+                                    <li class="menu__dropdown-item">
+                                        <a href="#" class="menu__dropdown-link">Стандартная уборка</a>
+                                    </li>
+                                    <li class="menu__dropdown-item">
+                                        <a href="#" class="menu__dropdown-link">Стандартная уборка</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__contact">
+                <div class="contact__info">
+                    <span class="contact__availability">Работаем 24/7</span>
+                    <a href="tel:+75236466474" class="contact__phone">+7 (523) 646-64-74</a>
+                </div>
+                <div class="contact__location">
+                    <a href="#" class="contact__location-link">
+                        <svg class="icon contact__icon">
+                            <use xlink:href="{% static 'icons/sprite-solid.svg' %}#icon-location" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </div>
-        <svg class="icon icon-plus">
-            <use xlink:href="{% static 'icons/sprite-solid.svg' %}#plus" />
-        </svg>
-        <svg class="icon two-tone icon-settings">
-            <use xlink:href="{% static 'icons/sprite-multicolor.svg' %}#clock" />
-        </svg>
-
-        <nav class="header__menu">
-            <ul class="menu">
-                <li class="menu__item has-dropdown">
-                    <a class="menu__link" href="#">Уборка квартир</a>
-                    <ul class="menu__dropdown">
-                        <li class="menu__dropdown--item">
-                            <a href="#" class="menu__dropdown-link">Стандартная уборка</a>
-                        </li>
-                        <li class="menu__dropdown--item">
-                            <a href="#" class="menu__dropdown-link">Стандартная уборка</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="menu-item has-dropdown"><a href="#">Уборка домов</a></li>
-                <li class="menu-item has-dropdown"><a href="#">Уборка офисов</a></li>
-                <li class="menu-item highlighted has-dropdown">
-                    <a href="#">Другие услуги</a>
-                </li>
-            </ul>
-        </nav>
     </div>
 </header>

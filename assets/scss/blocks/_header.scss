@@ -1,0 +1,70 @@
+@use '../abstracts/colors';
+
+.header {
+  &__body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 36px 0px;
+  }
+
+  &__contact {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.contact {
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+  }
+
+  &__availability {
+    font-size: 0.75rem;
+    color: colors.$color-gray
+  }
+
+  &__phone {
+    line-height: 1.4;
+    padding-bottom: 2px;
+    border-bottom: 1px solid colors.$color-primary;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: colors.$color-primary;
+    }
+  }
+
+  &__location {
+      margin-left: 16px;
+
+    &-link {
+      background-color: colors.$color-bg-surface;
+      border: none;
+      cursor: pointer;
+      display: flex ;
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background-color: colors.$color-primary;
+
+        .contact__icon {
+          fill: colors.$color-white;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    width: 12px;
+    height: 14px;
+  }
+}

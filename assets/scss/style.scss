@@ -1,7 +1,8 @@
+@use './abstracts/vars';
 @use './base/fonts';
 @use './base/icons';
 @use './base/base';
 @use './base/containers';
-@use './base/vars';
 
+@use './blocks/header';
 @use './blocks/nav';

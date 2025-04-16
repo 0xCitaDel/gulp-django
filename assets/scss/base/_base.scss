@@ -1,3 +1,6 @@
+@use '../abstracts/colors';
+@use '../abstracts/vars';
+
 /* CSS Reset */
 *,
 *::before,
@@ -12,15 +15,56 @@ html, body {
 }
 
 html {
+  font-size: 16px;
   scroll-behavior: smooth;
-  background-color: rgb(39, 39, 39);
+  background-color: colors.$color-gray;
 }
 
 body {
-  background-color: var(--page-bg);
-  color: var(--text-color);
-  font-family: var(--font-main);
+  background-color: colors.$color-white;
+  font-size: 1rem;
+  color: colors.$color-text-dark;
+  font-family: vars.$font-main;
+  line-height: 1.2;
   text-wrap: balance;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: vars.$font-accent;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+  color: inherit;
+}
+
+h1 {
+  font-size: 3.8125rem; // 61px
+}
+
+h2 {
+  font-size: 3.0625rem; // 49px
+}
+
+h3 {
+  font-size: 2.4375rem; // 39px
+}
+
+h4 {
+  font-size: 1.9375rem; // 31px
+}
+
+h5 {
+  font-size: 1.5625rem; // 25px
+  font-weight: 500;
+}
+
+h6 {
+  font-size: 1rem; // 16px
+}
+
+nav {
+  font-size: 0.875rem; // 14px
+  line-height: 1.4;
 }
 
 img, picture, video, canvas, svg {

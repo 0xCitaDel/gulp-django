@@ -1,3 +1,23 @@
+:root {
+  --container-width: 1200px;
+  --container-padding: 15px;
+  --font-main: "Manrope", sans-serif;
+  --font-accent: "Unbounded", sans-serif;
+  --font-titles: var(--font-accent);
+  --page-bg: #fff;
+  --text-color: #000;
+  --accent: #ac182c;
+  --link-color: #2578c8;
+  --laptop-size: 1199px;
+  --tablet-size: 959px;
+  --mobile-size: 599px;
+}
+
+.dark {
+  --page-bg: #252526;
+  --text-color: #fff;
+}
+
 @font-face {
   font-family: "Manrope";
   src: url("../fonts/Manrope-Regular.woff2") format("woff2"), url("../fonts/Manrope-Regular.woff") format("woff");
@@ -43,26 +63,9 @@
 .icon {
   width: 24px;
   height: 24px;
-  fill: #030E23;
-  color: #2972FE;
-  -webkit-transition: color 0.2s ease;
-  transition: color 0.2s ease;
-}
-.icon:hover {
   fill: #2972FE;
-  color: #000;
-}
-.icon.two-tone .primary {
-  fill: #2972FE;
-}
-.icon.two-tone .secondary {
-  fill: #fff;
-}
-.icon.two-tone:hover .primary {
-  fill: #000;
-}
-.icon.two-tone:hover .secondary {
-  fill: #fff;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 /* CSS Reset */
@@ -80,15 +83,56 @@ html, body {
 }
 
 html {
+  font-size: 16px;
   scroll-behavior: smooth;
-  background-color: rgb(39, 39, 39);
+  background-color: #8E9198;
 }
 
 body {
-  background-color: var(--page-bg);
-  color: var(--text-color);
-  font-family: var(--font-main);
+  background-color: #FFFFFF;
+  font-size: 1rem;
+  color: #030E23;
+  font-family: "Manrope", sans-serif;
+  line-height: 1.2;
   text-wrap: balance;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+  color: inherit;
+}
+
+h1 {
+  font-size: 3.8125rem;
+}
+
+h2 {
+  font-size: 3.0625rem;
+}
+
+h3 {
+  font-size: 2.4375rem;
+}
+
+h4 {
+  font-size: 1.9375rem;
+}
+
+h5 {
+  font-size: 1.5625rem;
+  font-weight: 500;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+nav {
+  font-size: 0.875rem;
+  line-height: 1.4;
 }
 
 img, picture, video, canvas, svg {
@@ -116,44 +160,177 @@ ul, ol {
   width: 100%;
 }
 
-:root {
-  --container-width: 1200px;
-  --container-padding: 15px;
-  --font-main: "Manrope", sans-serif;
-  --font-accent: "Unbounded", sans-serif;
-  --font-titles: var(--font-accent);
-  --page-bg: #fff;
-  --text-color: #000;
-  --accent: #ac182c;
-  --link-color: #2578c8;
-  --laptop-size: 1199px;
-  --tablet-size: 959px;
-  --mobile-size: 599px;
-}
-
-.dark {
-  --page-bg: #252526;
-  --text-color: #fff;
-}
-
-.menu_mobile {
+.header__body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 36px 0px;
 }
-
-.menu {
+.header__contact {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-@media (max-width: 1200px) {
-  .menu_mobile {
-    color: red;
-  }
-  .menu {
-    color: red;
-  }
+.contact__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: right;
+}
+.contact__availability {
+  font-size: 0.75rem;
+  color: #8E9198;
+}
+.contact__phone {
+  line-height: 1.4;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #2972FE;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.contact__phone:hover {
+  color: #2972FE;
+}
+.contact__location {
+  margin-left: 16px;
+}
+.contact__location-link {
+  background-color: #E4EDFF;
+  border: none;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 50%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.contact__location-link:hover {
+  background-color: #2972FE;
+}
+.contact__location-link:hover .contact__icon {
+  fill: #FFFFFF;
+}
+.contact__icon {
+  width: 12px;
+  height: 14px;
+}
+
+.menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 4px;
+  background-color: #F7F9FD;
+  border-radius: 80px;
+}
+.menu__item {
+  position: relative;
+}
+.menu__item:hover .menu__wrapper {
+  border-radius: 18px 18px 0 0;
+  background-color: #E4EDFF;
+}
+.menu__item:hover .menu__body {
+  opacity: 1;
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+  pointer-events: auto;
+}
+.menu__item:hover .menu__title {
+  color: #2972FE;
+}
+.menu__item:hover .menu__icon {
+  fill: #2972FE;
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.menu__wrapper {
+  position: relative;
+  border-radius: 18px;
+  display: inline-block;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  z-index: 1;
+}
+.menu__title {
+  cursor: pointer;
+}
+.menu__title-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 12px 16px;
+}
+.menu__title-wrapper:hover {
+  color: #293DFE;
+}
+.menu__title-wrapper:hover .menu__icon {
+  fill: #293DFE;
+}
+.menu__body {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 0 16px 10px;
+  width: 100%;
+  background-color: #E4EDFF;
+  border-radius: 0 0 18px 18px;
+  opacity: 0;
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -webkit-transform-origin: top;
+  transform-origin: top;
+  -webkit-transition: opacity 0.2s ease, -webkit-transform 0.2s ease;
+  transition: opacity 0.2s ease, -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease, -webkit-transform 0.2s ease;
+  pointer-events: none;
+  z-index: 100;
+}
+.menu__icon {
+  width: 0.71em;
+  height: 0.5em;
+  fill: #030E23;
+  margin-left: 5px;
+  -webkit-transition: fill 0.3s ease, -webkit-transform 0.3s ease;
+  transition: fill 0.3s ease, -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease, fill 0.3s ease;
+  transition: transform 0.3s ease, fill 0.3s ease, -webkit-transform 0.3s ease;
+}
+.menu__dropdown-item {
+  color: #2972FE;
+}
+.menu__dropdown-item:hover {
+  color: #293DFE;
+}
+.menu__dropdown-link {
+  padding: 2px 0px;
+  display: block;
 }
 /*# sourceMappingURL=style.min.css.map */
