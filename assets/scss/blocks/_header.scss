@@ -1,4 +1,5 @@
 @use '../abstracts/colors';
+@use './abstracts/breakpoints' as *;
 
 .header {
   &__body {
@@ -11,6 +12,19 @@
   &__contact {
     display: flex;
     align-items: center;
+
+    @include respond-to('lg') {
+      display: none;
+    }
+  }
+
+  &__mobile-menu {
+    display: none;
+
+    @include respond-to('lg') {
+      display: flex;
+      align-items: center;
+    }
   }
 }
 
@@ -40,31 +54,64 @@
 
   &__location {
       margin-left: 16px;
-
-    &-link {
-      background-color: colors.$color-bg-surface;
-      border: none;
-      cursor: pointer;
-      display: flex ;
-      width: 40px;
-      height: 40px;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      transition: all 0.2s ease;
-
-      &:hover {
-        background-color: colors.$color-primary;
-
-        .contact__icon {
-          fill: colors.$color-white;
-        }
-      }
-    }
   }
 
   &__icon {
     width: 12px;
     height: 14px;
+  }
+}
+
+.mobile-menu {
+  &__link {
+    margin: 0px 3px;
+  }
+
+  &__icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  &__toggle {
+    width: 40px;
+    height: 40px;
+    margin-left: 9px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #070d1b, #16101b);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3px;
+    transition: background 0.3s ease;
+    z-index: 1001;
+
+    &.active {
+      .mobile-menu__line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .mobile-menu__line:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+
+      .mobile-menu__line:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+    }
+  }
+
+  &__line {
+    width: 12px;
+    height: 1px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  &__line-center {
+    width: 15px;
   }
 }

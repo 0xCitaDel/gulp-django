@@ -1,10 +1,15 @@
 // =====================================
-// VARIABLES
+// IMPORTS
 // =====================================
 @use '../abstracts/colors';
 @use '../abstracts/vars';
+@use './abstracts/breakpoints' as *;
 
 .menu {
+  @include respond-to('lg') {
+    display: none;
+  }
+
   &__list {
     display: flex;
     padding: 4px;

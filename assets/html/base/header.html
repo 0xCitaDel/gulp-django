@@ -120,12 +120,30 @@
                     <a href="tel:+75236466474" class="contact__phone">+7 (523) 646-64-74</a>
                 </div>
                 <div class="contact__location">
-                    <a href="#" class="contact__location-link">
-                        <svg class="icon contact__icon">
+                    <a href="#" class="contact__location-link icon-surface">
+                        <svg class="contact__icon icon">
                             <use xlink:href="{% static 'icons/sprite-solid.svg' %}#icon-location" />
                         </svg>
                     </a>
                 </div>
+            </div>
+            <div class="header__mobile-menu">
+                <a href="#" class="mobile-menu__link icon-surface">
+                    <svg class="mobile-menu__icon icon">
+                        <use xlink:href="{% static 'icons/sprite-solid.svg' %}#icon-whatsapp" />
+                    </svg>
+                </a>
+                <a href="#" class="mobile-menu__link icon-surface">
+                    <svg class="mobile-menu__icon icon">
+                        <use xlink:href="{% static 'icons/sprite-solid.svg' %}#icon-telegram" />
+                    </svg>
+                </a>
+                <button class="mobile-menu__toggle active" aria-label="Открыть меню">
+                    <span class="mobile-menu__line"></span>
+                    <span class="mobile-menu__line mobile-menu__line-center"></span>
+                    <span class="mobile-menu__line"></span>
+                </button>
+
             </div>
         </div>
     </div>

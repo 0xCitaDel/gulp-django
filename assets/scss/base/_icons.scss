@@ -1,4 +1,5 @@
 @use '../abstracts/colors';
+@use './abstracts/breakpoints' as *;
 
 $icon-hover-color: #2972FE;
 
@@ -7,4 +8,30 @@ $icon-hover-color: #2972FE;
   height: 24px;
   fill: colors.$color-primary;
   transition: all 0.2s ease;
+}
+
+.icon-surface {
+  background-color: colors.$color-bg-surface;
+  border: none;
+  cursor: pointer;
+  display: flex ;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: colors.$color-primary;
+
+    .icon {
+      fill: colors.$color-white;
+    }
+  }
+
+  @include respond-to('lg') {
+    width: 32px;
+    height: 32px;
+  }
 }
